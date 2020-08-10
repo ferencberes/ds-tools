@@ -11,4 +11,4 @@ pip install -r requirements.txt
 
 # Trials
 
-- Jupyter notebook [version control](version_control/Readme.md)
+- Jupyter notebook [version control](version_control/)
