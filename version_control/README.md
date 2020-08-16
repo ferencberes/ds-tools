@@ -2,7 +2,19 @@
 
 In this folder you can find different notebook versions that both process the seaborn [miles per gallon data set](https://seaborn.pydata.org/examples/scatter_bubbles.html) (MPG). You can discover the differences in the notebook contents with version control tools designed for Jupyter.
 
+### Different MPG notebook versions
 
+- base notebook: [MPG1](MPG1.ipynb)
+- changes to visualization + missing value search: [MPG2](MPG2.ipynb) (parent is MPG1)
+- duplication check: [MPG3](MPG3.ipynb) (parent is MPG1)
+
+## Jupyter nbdime
+
+[GitHub](https://github.com/jupyter/nbdime) and [documentation](https://nbdime.readthedocs.io/en/latest) for the `dbdime` tool.
+
+### A.) Without git integration
+
+#### Diff
 
 Original git command for code diff **(not a human friendly output)**:
 
@@ -10,19 +22,13 @@ Original git command for code diff **(not a human friendly output)**:
 diff MPG1.ipynb MPG2.ipynb
 ```
 
-## Jupyter nbdime
-
-## A.) Without git integration
-
-#### Diff
-
-Try it with [nbdime](https://github.com/jupyter/nbdime) in the console:
+Try it with `nbdime` in the console **(much more user friendly)**:
 
 ```bash
 nbdiff MPG1.ipynb MPG2.ipynb
 ```
 
-Try it with [nbdime](https://github.com/jupyter/nbdime) in the browser:
+Try it with `nbdime` in the browser:
 
 ```bash
 nbdiff-web MPG1.ipynb MPG2.ipynb
@@ -30,19 +36,13 @@ nbdiff-web MPG1.ipynb MPG2.ipynb
 
 #### Merge
 
-Merging three versions of the MPG notebook
-
-- base notebook: [MPG1](MPG1.ipynb)
-- changes to visualization + missing value search: [MPG2](MPG2.ipynb)
-- duplication check: [MPG3](MPG3.ipynb)
-
 ```bash
 nbmerge-web MPG1.ipynb MPG2.ipynb MPG3.ipynb
 ```
 
 The provided web interface lets you decide which cells to delete, clear then executes the merge with you verification.
 
-## B.) Without git integration
+### B.) With git integration
 
 You can also choose to [integrate nbdime with git](https://nbdime.readthedocs.io/en/latest/vcs.html#git-integration) by executing the following command in the root of your repository:
 
@@ -51,8 +51,38 @@ cd REPO_ROOT
 nbdime config-git --enable
 ```
 
-Then nbdime will be called during the original `git diff` command and notebook changes will be returned in a much more user friendly output.
+#### Diff
 
-#### NOTE
+After the previous setup `nbdime` is automatically called during the original `git diff` command and notebook changes are returned in a much more user friendly output.
+
+#### Merge
+
+Follow these steps to test how `git merge` works after setting up with `nbdime`.
+
+1. Create a separate branch and overwrite MPG2.ipynb
+
+```bash
+git checkout -b merge_demo
+cp MPG3.ipynb MPG2.ipynb
+git commit -am "MPG2 overwritten"
+```
+
+2. Merge changes with the master branch
+
+```bash
+git checkout master
+git merge merge_demo
+```
+
+**Note that the merge was succesful even with cell outputs and execution order numbers present in the notebook!**
+
+3. Reset master branch to the original state
+
+```bash
+git reset --hard HEAD~1
+git branch -D merge_demo
+```
+
+**NOTE:**
 
 If you simply call `git mergetool --tool nbdime`, it will be called for all merge conflicts, even on filetypes that it cannot handle. To only call on notebooks, add a filter on file paths, e.g. `git mergetool --tool nbdime -- *.ipynb`. 
