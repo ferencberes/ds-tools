@@ -1,6 +1,6 @@
 # Version control trials
 
-In this folder you can find different notebook versions that both process the seaborn [miles per gallon data set](https://seaborn.pydata.org/examples/scatter_bubbles.html) (MPG). You can discover the differences in the notebook contents with version control tools designed for Jupyter.
+In this folder you can find different notebook versions that both process the seaborn [miles per gallon data set](https://seaborn.pydata.org/examples/scatter_bubbles.html) (MPG). You can discover the differences in their contents with version control tools designed for Jupyter notebooks.
 
 ### Different MPG notebook versions
 
