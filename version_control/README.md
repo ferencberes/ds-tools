@@ -100,6 +100,8 @@ A few example resources to observe:
 
 # jupytext
 
+[GitHub](https://github.com/mwouts/jupytext) and [documentation](https://jupytext.readthedocs.io/en/latest/) for the `jupytext` tool.
+
 After installation `jupytext` is available through the `File/Jupytext` Jupyter menu bar option. By default synchronization is disabled for every notebook.
 
 ## Setup
@@ -112,18 +114,30 @@ git add MPG3.py
 git commit -am "MPG3 setup complete"
 ```
 
-After this setup you may disable version control on the notebook file.
+In order to avoid future merge conflicts for Jupyter notebook you should disable version control on the original notebook file.
 
 ```bash
-
+git rm --cached MPG3.ipynb
 ```
+
+### Note
+
+After proper setup `jupytext` automatically manages the synchronization process between the notebook and its script counterpart file. **Thus the `jupytext --sync` command is not necessary in the following examples.**
 
 ## How to commit
 
+Before every new commit make sure that your notebook is synchronized.
 
+```bash
+jupytext --sync MPG3.ipynb #optional
+git commit -am "new commit after sync"
+```
 
+## How to update after remote changes
 
-## How to update after `git pull`
+```bash
+git pull # or git merge
+jupytext --sync MPG3.ipynb #optional
+```
 
-
-
+For the complete list of `jupytext` commands click [here](https://github.com/mwouts/jupytext#command-line-conversion). 
