@@ -1,6 +1,6 @@
 # Introduction
 
-In this folder you can find different notebook versions that both process the seaborn [miles per gallon data set](https://seaborn.pydata.org/examples/scatter_bubbles.html) (MPG). You can discover the differences in their contents with version control tools designed for Jupyter notebooks.
+In this folder you can find different notebook versions that both processes the seaborn [miles per gallon data set](https://seaborn.pydata.org/examples/scatter_bubbles.html) (MPG). You can discover the differences in their contents with version control tools designed for Jupyter notebooks.
 
 ### Different MPG notebook versions
 
@@ -74,7 +74,7 @@ git checkout master
 git merge merge_demo
 ```
 
-**Note that the merge was succesful even with cell outputs and execution order numbers present in the notebook!**
+**Note that the merge was successful even with cell outputs and execution order numbers present in the notebook!**
 
 3. Reset master branch to the original state
 
@@ -92,7 +92,7 @@ If you simply call `git mergetool --tool nbdime`, it will be called for all merg
 
 ReviewNB [website](https://www.reviewnb.com/) and [pricing](https://www.reviewnb.com/#pricing). It is free for open source GitHub repositories.
 
-I enabled the ReviewNB tool for [this repository](https://app.reviewnb.com/ferencberes/ds-tools). In order to access content you must login to ReviewNB (e.g. with your GitHub account).
+I enabled the ReviewNB tool for [this repository](https://app.reviewnb.com/ferencberes/ds-tools). In order to access the content you must login to ReviewNB (e.g. with your GitHub account).
 
 A few example resources to observe:
 - [Visualized changes](https://app.reviewnb.com/ferencberes/ds-tools/commit/a960951319bc1470e4459df5f5b6a7fa52ac1869/) for this [commit](https://github.com/ferencberes/ds-tools/commit/a960951319bc1470e4459df5f5b6a7fa52ac1869)
