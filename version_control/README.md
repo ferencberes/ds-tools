@@ -95,4 +95,35 @@ ReviewNB [website](https://www.reviewnb.com/) and [pricing](https://www.reviewnb
 I enabled the ReviewNB tool for [this repository](https://app.reviewnb.com/ferencberes/ds-tools). In order to access content you must login to ReviewNB (e.g. with your GitHub account).
 
 A few example resources to observe:
-- [Visualized changes](https://app.reviewnb.com/ferencberes/ds-tools/commit/a960951319bc1470e4459df5f5b6a7fa52ac1869/) for this [commit](https://github.com/ferencberes/ds-tools/commit/a960951319bc1470e4459df5f5b6a7fa52ac1869) 
+- [Visualized changes](https://app.reviewnb.com/ferencberes/ds-tools/commit/a960951319bc1470e4459df5f5b6a7fa52ac1869/) for this [commit](https://github.com/ferencberes/ds-tools/commit/a960951319bc1470e4459df5f5b6a7fa52ac1869)
+- [Discussions](https://app.reviewnb.com/ferencberes/ds-tools/blob/master/version_control%2FMPG2.ipynb/file) for the MPG2 notebook.
+
+# jupytext
+
+After installation `jupytext` is available through the `File/Jupytext` Jupyter menu bar option. By default synchronization is disabled for every notebook.
+
+## Setup
+
+Let's set up synchronization for the MPG3.ipynb notebook. Then add the generated `MPG3.py` file to the git repository.
+
+```bash
+jupytext --set-formats ipynb,py MPG3.ipynb
+git add MPG3.py
+git commit -am "MPG3 setup complete"
+```
+
+After this setup you may disable version control on the notebook file.
+
+```bash
+
+```
+
+## How to commit
+
+
+
+
+## How to update after `git pull`
+
+
+
