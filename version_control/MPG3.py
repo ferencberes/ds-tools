@@ -49,7 +49,10 @@ assert(len(mpg_no_dupl) == len(mpg))
 # # Visualization
 
 # Plot miles per gallon against horsepower with other semantics
-sns.relplot(x="horsepower", y="mpg", hue="origin", size="weight",
+import sys
+pyversion = sys.version_info
+if pyversion.major == 3 and pyversion == 5:
+    sns.relplot(x="horsepower", y="mpg", hue="origin", size="weight",
             sizes=(40, 400), alpha=.5, palette="muted",
             height=6, data=mpg)
 
