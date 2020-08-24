@@ -11,3 +11,4 @@ script:
   - treon
   - cd continuous_integration
   - pytest --nbval
+  - python -m doctest -v utils.py 
