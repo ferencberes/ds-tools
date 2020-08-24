@@ -1,4 +1,6 @@
 # ds-tools
+[![Build Status](https://travis-ci.org/ferencberes/ds-tools.svg?branch=master)](https://travis-ci.org/ferencberes/ds-tools)
+
 Data science tool trials
 
 # Dependencies
