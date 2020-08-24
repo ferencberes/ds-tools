@@ -1,7 +1,11 @@
 pandas
 numpy
+sklearn
 jupyter
 matplotlib
 seaborn
 nbdime
 jupytext
+ipytest
+nbval
+treon
