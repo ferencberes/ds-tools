@@ -8,7 +8,7 @@ install:
   - pip install -r requirements.txt
 # command to run tests
 script:
-  - treon
+  - treon -e apps/
   - cd continuous_integration
-  - pytest --nbval
+  - pytest --nbval --ignore apps/
   - python -m doctest -v utils.py 
