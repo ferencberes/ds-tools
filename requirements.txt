@@ -9,3 +9,8 @@ jupytext
 ipytest
 nbval
 treon
+papermill
+neptune-client
+neptune-notebooks
+wordcloud
+psutil
