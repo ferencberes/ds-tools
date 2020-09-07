@@ -1,6 +1,6 @@
 pandas
 numpy
-sklearn
+scikit-learn
 jupyter
 matplotlib
 seaborn
@@ -12,5 +12,7 @@ treon
 papermill
 neptune-client
 neptune-notebooks
+metaflow
+mlflow
 wordcloud
 psutil
