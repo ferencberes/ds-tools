@@ -16,3 +16,7 @@ metaflow
 mlflow
 wordcloud
 psutil
+parameter-sherpa
+optuna
+hyperopt
+plotly
